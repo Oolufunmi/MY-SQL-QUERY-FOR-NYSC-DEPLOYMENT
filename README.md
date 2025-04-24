@@ -1,30 +1,46 @@
 # MY-SQL-QUERY-FOR-NYSC-DEPLOYMENT
+
 This is to summarize post based on a university's graduated student record
 
-NYSC DATA ANALYSIS FROM DAYO
-Highest nos of student from university
+
+1. Highest nos of student from university
+   ```MYSQL
 SELECT university_attended,COUNT(university_attended)AS UniNos FROM `nysc_data` GROUP by university_attended ORDER by university_attended desc limit 1
-COMPARISON
+```
+
+### COMPARISON
 COMPARISON  entails : We have greater than, less than, greater than =, Less than =, Not equal to
 On numbers
 !=           <>  represent Not equal to
+
+```MYSQL
 SELECT fullname,year_of_graduation FROM `nysc_data` WHERE year_of_graduation <> 2020
 SELECT fullname,year_of_graduation FROM `nysc_data` WHERE year_of_graduation != 2020
-COMPARISON
-On string 
+```
+
+COMPARISON On string 
+```MYSQL
 SELECT fullname,university_attended FROM `nysc_data` WHERE university_attended !='Imo State University'
-LOGICAL
+```
+### LOGICAL
 And, or, Not
 
 OR
+```MYSQL
 SELECT * FROM `NYSC_Data` WHERE state_of_origin = 'ekiti' or state_of_origin ='ogun' or state_of_origin = 'lagos'
+```MYSQL
 SHORTCUT FOR “OR”
+```MYSQL
 SELECT * FROM `NYSC_Data` WHERE state_of_origin IN ('lagos','ekiti','ogun')
+```
 SHORTCUT FOR “NOT IN”
+```
 SELECT * FROM `NYSC_Data` WHERE state_of_origin NOT IN ('lagos','ekiti','ogun')
+```
 Not in
+```MYSQL
 SELECT * FROM `NYSC_Data` WHERE university_attended NOT in ('Delta State University','Imo State University', 'Nnamdi Azikiwe University')
-
+```
 Wildcard Characters
 Symbol 	Description
 % 	Represents zero or more characters
@@ -33,8 +49,10 @@ _ 	Represents a single character
 ^ 	Represents any character not in the brackets *
 - 	Represents any single character within the specified range *
 {} 	Represents any escaped character **
-NOTE FROM TUTORIAL WITH DAYO
-Dayo taught me that if I mistakenly type Delete on SQL, it will delete all data records.
+
+
+# NOTE FROM TUTORIAL
+I learnt that if I mistakenly type Delete on SQL, it will delete all data records.
 Also, He mentioned to me that when you use “Update” I should always specify the column and row I want to update. If not properly stated. SQL will update all
 Drop is for Database and Table
 Alter is for Column and Row
@@ -54,7 +72,7 @@ You can drop Database and table while you can delete row and column
 Varchar accomodate number, symbol and words. It is also known as strings
 Data type generally talks about the data structure 
 
-Koko SQL
+### Essence of SQL
 Logical reasoning 
 Conditional reasoning 
 Comparison 
@@ -69,8 +87,9 @@ Or : one of them is from iwo. Once one of the conditions is met. Then it gives r
 Not: none of them is from iwo. Or not Ileogbo
 
 Not in
+```MYSQL
 SELECT * FROM `NYSC_Data` WHERE university_attended NOT in ('Delta State University','Imo State University', 'Nnamdi Azikiwe University')
-
+```
 NOTE
 UPDATE IS TO EDIT
 INSERT IS TO ADD NEW ROW
